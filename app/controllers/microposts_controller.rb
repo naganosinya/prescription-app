@@ -4,6 +4,7 @@ class MicropostsController < ApplicationController
 
   def new
     @micropost = Micropost.new
+
   end
 
   def create
@@ -18,10 +19,16 @@ class MicropostsController < ApplicationController
   def create_after
     pointer = rand(1..10)
     @redirect_path = if pointer > 3
-      microposts_success_path
-    else
-      microposts_failed_path
-    end
+                       m = Micropost.last
+                       m.allow = true
+                       m.save
+                       microposts_success_path
+                     else
+                       m = Micropost.last
+                       m.allow = false
+                       m.save
+                       microposts_failed_path
+                     end
   end
 
   def success
@@ -33,12 +40,19 @@ class MicropostsController < ApplicationController
   end
 
   def index
-    @microposts = Micropost.all
+    if params[:allow] == 'true'
+      @microposts = Micropost.where(allow: true)
+    elsif params[:allow] == 'false'
+      @microposts = Micropost.where(allow: false)
+    else
+      redirect_to root_path
+    end
   end
 
   private
+
   def micropost_params
-    params.require(:micropost).permit(:content)
+    params.require(:micropost).permit(:content, :budda, :saiban, :christ)
   end
 
 end
