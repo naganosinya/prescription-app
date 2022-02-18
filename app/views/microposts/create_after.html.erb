@@ -1,18 +1,20 @@
-<% if @radio_type == '1' %>
-  キリスト教だよ
-<% elsif @radio_type == '2' %>
-  釈迦だよ
-<% end %>
-<div>
-  <p class="until">時効成立まで</p>
-  <p class="timer">あと
-    <span id="sec"></span>秒
-  </p>
+<div class="wrapper">
+  <div class="d-flex align-items-center justify-content-center">
+    <p class="until">時効成立まであと<span id="sec">1111</span>秒</p>
+  </div>
+
+  <div class="countdawn">
+    <% if @radio_type == '1' %>
+      <%= render 'create-after/christ' %>
+    <% elsif @radio_type == '2' %>
+      <%= render 'create-after/buddha' %>
+    <% end %>
+  </div>
 </div>
 
 <script>
   setTimeout(function () {
     window.location.href = '<%= @redirect_path %>';
   }, 5 * 1000);
-
 </script>
+<%= javascript_pack_tag 'countdown', 'data-turbolinks-track': 'reload' %>

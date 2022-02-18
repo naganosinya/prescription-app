@@ -1,10 +1,9 @@
-<% if @radio_type == '1' %>
-  キリスト教だよ
-<% elsif @radio_type == '2' %>
-  釈迦だよ
-<% end %>
-<div>
-  成功
-</div>
+<div class="wrapper">
+  <% if @radio_type == '1' %>
+    <%= render 'success/christ' %>
+  <% elsif @radio_type == '2' %>
+    <%= render 'success/buddha' %>
+  <% end %>
 
-<%= link_to "時効成立した一覧", microposts_path(allow: 'true') %>
+  <%= link_to "時効成立した一覧", microposts_path(allow: 'true') %>
+</div>

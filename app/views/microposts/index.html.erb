@@ -1,5 +1,10 @@
-<% @microposts.each do |micropost| %>
-  <div>
-    <%= micropost.content %>
-  </div>
-<% end %>
+<div class="wrapper">
+  <h1><%= @title %></h1>
+  <% @microposts.each do |micropost| %>
+    <div class="card my-2">
+      <div class="card-body">
+        <%= micropost.content %>
+      </div>
+    </div>
+  <% end %>
+</div>
