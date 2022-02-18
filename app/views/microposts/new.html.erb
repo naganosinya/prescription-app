@@ -1,0 +1,9 @@
+<div>
+  ここにラジオぼたん
+</div>
+<%= form_with model: @micropost, local: true do |f| %>
+  <%= f.text_area :content, :placeholder => 'ここに入力' %>
+  <div>
+    <%= f.submit "時効成立を待つ", class: "btn btn-primary w-25" %>
+  </div>
+<% end %>
