@@ -17,6 +17,8 @@ class MicropostsController < ApplicationController
   end
 
   def create_after
+    @radio_type = Micropost.last.radio_type
+
     pointer = rand(1..10)
     @redirect_path = if pointer > 3
                        m = Micropost.last
@@ -32,11 +34,11 @@ class MicropostsController < ApplicationController
   end
 
   def success
-
+    @radio_type = Micropost.last.radio_type
   end
 
   def failed
-
+    @radio_type = Micropost.last.radio_type
   end
 
   def index
@@ -52,7 +54,7 @@ class MicropostsController < ApplicationController
   private
 
   def micropost_params
-    params.require(:micropost).permit(:content, :budda, :saiban, :christ)
+    params.require(:micropost).permit(:content, :radio_type)
   end
 
 end
