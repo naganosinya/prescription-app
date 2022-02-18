@@ -1,9 +1,13 @@
 <div>
 北さん
+<p class="until">時効成立まで</p>
+<p class="timer">あと
+<span id="sec"></span>秒
+</p>
 </div>
 
 <script>
 setTimeout(function(){
-  window.location.href = '<%= microposts_success_path %>';
+  window.location.href = '<%= @redirect_path %>';
 }, 5*1000);
 </script>

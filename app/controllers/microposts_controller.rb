@@ -16,20 +16,20 @@ class MicropostsController < ApplicationController
   end
 
   def create_after
-    # sleep 5
-    # current_time = Micropost.last.created_at
-    # while Time.now - current_time < 5 
-      
-    # end
-    # redirect_to microposts_success_path
+    pointer = rand(1..10)
+    @redirect_path = if pointer > 3
+      microposts_success_path
+    else
+      microposts_failed_path
+    end
   end
 
   def success
-    
+
   end
 
   def failed
-    
+
   end
 
   def index
