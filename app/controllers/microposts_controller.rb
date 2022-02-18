@@ -43,8 +43,10 @@ class MicropostsController < ApplicationController
 
   def index
     if params[:allow] == 'true'
+      @title = '成立した一覧'
       @microposts = Micropost.where(allow: true)
     elsif params[:allow] == 'false'
+      @title = '成立しなかった一覧'
       @microposts = Micropost.where(allow: false)
     else
       redirect_to root_path
