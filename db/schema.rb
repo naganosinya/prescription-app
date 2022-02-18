@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2022_02_18_020705) do
   create_table "microposts", force: :cascade do |t|
     t.text "content", null: false
     t.boolean "allow"
+    t.string "radio_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

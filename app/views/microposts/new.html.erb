@@ -1,4 +1,11 @@
 <%= form_with model: @micropost, local: true do |f| %>
+
+<%= f.label :radio_type, 'キリスト教', value: '1' %>
+<%= f.radio_button :radio_type, '1', checked: true %>
+
+<%= f.label :radio_type, '釈迦', value: '2' %>
+<%= f.radio_button :radio_type, '2' %>
+
   <div>
     <%= f.text_area :content, :placeholder => 'ここに入力' %>
   </div>
