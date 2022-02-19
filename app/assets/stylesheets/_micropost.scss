@@ -2,15 +2,104 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 #body {
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-family: "Sawarabi Mincho", sans-serif;
+  color: #333;
 }
 
 .ab-tsurara {
   font-family: ab-tsurara, sans-serif!important;
 }
+
 .wrapper {
   max-width: 600px;
   margin: 50px auto;
+}
+
+#body .navbar-header {
+  background-color: #04042f;
+  padding: 12px 0 24px;
+}
+
+.header-logo {
+  a {
+    display: block;
+  }
+
+  .app-logo {
+    display: block;
+    margin: 8px 0;
+    width: 120px;
+  }
+}
+
+.mv-img {
+  width: 100%;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.news-title {
+  width: 25%;
+  background-color: #c00;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+
+  >p {
+    margin: 34px 0;
+  }
+}
+
+.news-content {
+  align-self: center;
+  font-weight: bold;
+  font-size: 24px;
+  margin: 0;
+  text-align: center;
+  margin-left: -140px;
+  flex: 1 1 auto;
+
+  span {
+    font-size: 60px;
+  }
+}
+
+.catch-copy-wrapper {
+  background-color: #f5f5f5;
+  padding: 100px 0 80px;
+}
+
+.catch-copy {
+  padding: 0 60px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.ziko-link a {
+  text-align: center;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #04042f;
+  text-decoration: none;
+  width: 180px;
+  height: 60px;
+  line-height: 60px;
+  margin: 0 auto;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.6);
+
+  &:hover {
+    color: #fff;
+    opacity: .7;
+  }
 }
 
 .form-control.form-textarea {
@@ -23,13 +112,4 @@
 
 .countdawn {
   margin: 40px 0;
-}
-
-.until {
-  font-size: 32px;
-
-  span {
-    font-size: 60px;
-    font-weight: bold;
-  }
 }
