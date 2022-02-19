@@ -1,24 +1,34 @@
-# README
+# 時効
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+日々のちょっとした罪（例：ダイエット中なのに爆食いした）に時効を成立させるサイトです。
 
-Things you may want to cover:
+## バージョン
+Ruby: 3.1.0
+Ruby on Rails: 6.1.4.4
+node.js: 16.13.1
 
-* Ruby version
+## 使い方
 
-* System dependencies
+このアプリケーションを動かす場合は、まずはリポジトリを手元にクローンしてください。
+その後、次のコマンドで必要になる RubyGems をインストールします。
 
-* Configuration
+```
+$ gem install bundler
+$ bundle install
+$ yarn install
+```
 
-* Database creation
+その後、データベースへのマイグレーションを実行します。
 
-* Database initialization
+```
+$ rails db:create
+$ rails db:migrate
+```
 
-* How to run the test suite
+最後にRailsサーバーを立ち上げます。
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ rails server
+```
 
-* Deployment instructions
-
-* ...
