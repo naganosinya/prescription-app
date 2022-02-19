@@ -1,5 +1,8 @@
 <div class="wrapper">
-  <h1><%= @title %></h1>
+  <div class="d-flex justify-content-between">
+    <span class="fs-1"><%= @title %></span>
+    <%= link_to @subtitle, @link_path, class: 'align-self-end' %>
+  </div>
   <% @microposts.each do |micropost| %>
     <div class="card my-2">
       <div class="card-body">

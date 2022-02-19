@@ -1,21 +1,12 @@
 <div class="wrapper">
   <%= form_with model: @micropost, local: true do |f| %>
-    <div class="mt-3 mb-4">
-      <div class="form-check">
-        <%= f.radio_button :radio_type, '1', checked: true, class: 'form-check-input cursor-pointer' %>
-        <%= f.label :radio_type, 'キリスト教', value: '1', class: 'form-check-label cursor-pointer' %>
-      </div>
-      <div class="form-check">
-        <%= f.radio_button :radio_type, '2', class: 'form-check-input cursor-pointer' %>
-        <%= f.label :radio_type, '釈迦', value: '2', class: 'form-check-label cursor-pointer' %>
-      </div>
-    </div>
+
     <div class="form-floating mb-3">
       <%= f.text_area :content, class: 'form-control form-textarea', :required => true %>
       <%= f.label :content, '時効にしたいことを書く' %>
     </div>
-    <div class="my-5">
-      <%= f.submit "時効成立を待つ", class: "btn btn-primary btn-lg" %>
+    <div class="my-5 text-center">
+      <%= f.submit "時効成立を待つ", class: "btn btn-ziko btn-primary btn-lg" %>
     </div>
   <% end %>
 </div>
