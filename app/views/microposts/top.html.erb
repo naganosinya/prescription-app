@@ -1,7 +1,13 @@
 <div class="mv-img"><%= image_tag 'publicdomainq.jpeg' %></div>
 <div class="news-section d-flex">
   <div class="news-title"><p>重要なお知らせ</p></div>
-  <p class="news-content">時効が成立した数<span><%= @microposts_count || '0' %></span> 件</p>
+  <p class="news-content">時効が成立した数<span>
+    <% if @microposts_count %>
+      <%= @microposts_count %>
+    <% else %>
+      0
+    <% end %>
+  </span> 件</p>
 </div>
 
 <div class="catch-copy-wrapper">
