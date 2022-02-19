@@ -4,16 +4,11 @@
 #body {
   font-family: "Sawarabi Mincho", sans-serif;
   color: #333;
-    .img-fluid {
-      width: 100%;
-      max-width: none;
-    }
-    max-width: 1200px;
 
-}
-
-.ab-tsurara {
-  font-family: ab-tsurara, sans-serif!important;
+  .img-fluid {
+    width: 100%;
+    max-width: none;
+  }
 }
 
 .wrapper {
@@ -111,6 +106,11 @@
 .btn-ziko {
   background-color: #04042f!important;
   border: none!important;
+
+  &:hover {
+    color: #fff;
+    opacity: .7;
+  }
 }
 
 .form-control.form-textarea {
@@ -122,9 +122,23 @@
 }
 
 .countdawn {
-  margin: 40px 0;
+  margin: 20px 0 40px;
 }
 
 .result-title {
   font-size: 100px;
+}
+
+.howto-use {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#sec {
+  font-size: 90px;
+  font-weight: bold;
+}
+
+.lh-60 {
+  line-height: 60px;
 }
