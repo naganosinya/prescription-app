@@ -1,8 +1,8 @@
 <div class="wrapper">
   <% if @radio_type == '1' %>
-    <%= render 'success/christ' %>
+    <%= render 'success/type1' %>
   <% elsif @radio_type == '2' %>
-    <%= render 'success/buddha' %>
+    <%= render 'success/type2' %>
   <% end %>
 
   <%= link_to "時効成立した一覧", microposts_path(allow: 'true') %>
