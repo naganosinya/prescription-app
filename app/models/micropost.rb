@@ -10,4 +10,5 @@
 #  updated_at :datetime         not null
 #
 class Micropost < ApplicationRecord
+	validates :content, presence: true
 end

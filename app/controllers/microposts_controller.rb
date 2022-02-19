@@ -1,5 +1,6 @@
 class MicropostsController < ApplicationController
   def top
+    @microposts_count = Micropost.where(allow: true).count
   end
 
   def new
