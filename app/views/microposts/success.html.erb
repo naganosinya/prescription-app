@@ -5,5 +5,7 @@
     <%= render 'success/type2' %>
   <% end %>
 
-  <%= link_to "時効成立した一覧", microposts_path(allow: 'true') %>
+  <div class="mt-4 text-center ">
+    <%= link_to "時効成立一覧", microposts_path(allow: 'true'), class: 'text-white btn btn-success fs-4' %>
+  </div>
 </div>

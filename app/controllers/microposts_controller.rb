@@ -1,6 +1,6 @@
 class MicropostsController < ApplicationController
   def top
-    @microposts_count = Micropost.where(allow: true).count
+    @microposts_count = Micropost.where(allow: true)&.count || 0
   end
 
   def new
@@ -18,7 +18,7 @@ class MicropostsController < ApplicationController
   end
 
   def create_after
-    @radio_type = Micropost.last.radio_type
+    @radio_type = %w[1 2].sample
 
     pointer = rand(1..10)
     @redirect_path = if pointer > 3
@@ -35,19 +35,23 @@ class MicropostsController < ApplicationController
   end
 
   def success
-    @radio_type = Micropost.last.radio_type
+    @radio_type = %w[1 2].sample
   end
 
   def failed
-    @radio_type = Micropost.last.radio_type
+    @radio_type = %w[1 2].sample
   end
 
   def index
     if params[:allow] == 'true'
-      @title = '成立した一覧'
+      @title = '時効成立一覧'
+      @subtitle = '時効不成立一覧'
+      @link_path = microposts_path(allow: 'false')
       @microposts = Micropost.where(allow: true)
     elsif params[:allow] == 'false'
-      @title = '成立しなかった一覧'
+      @title = '時効不成立一覧'
+      @subtitle = '時効成立一覧'
+      @link_path = microposts_path(allow: 'true')
       @microposts = Micropost.where(allow: false)
     else
       redirect_to root_path

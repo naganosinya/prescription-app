@@ -4,6 +4,7 @@
   <% elsif @radio_type == '2' %>
     <%= render 'failed/type2' %>
   <% end %>
-
-  <%= link_to "時効成立しなかった一覧", microposts_path(allow: 'false') %>
+  <div class="mt-4 text-center">
+    <%= link_to "時効不成立一覧", microposts_path(allow: 'false'), class: 'btn btn-danger fs-4' %>
+  </div>
 </div>
